@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - ITindex</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        <link href="~/Css/SiteStyle.css" rel="stylesheet" type="text/css" />
+        @*@Styles.Render("~/Content/css")*@
+        @Scripts.Render("~/bundles/modernizr")
+    </head>
+    <body>
+        <div class="content-wrapper">
+        <div style="width:100%; padding :10px 0 10px 0; font-family:'Monotype Corsiva'; font-weight:600; font-size:2.3em;">
+            ITindex.com.au
+        </div>
+        <div style="float:left; width:98%; background-color:#e8e1e1; height:25px; border-bottom:solid #000 5px; padding:0 10px 0 0px; border-left:1px solid #a19a9a;border-right:1px solid #a19a9a;border-top:1px solid #a19a9a;">
+              <div id="menu">
+
+                    <ul id="nav">
+                         <li>@Html.ActionLink("HOME", "Index", "Home")</li>
+                            <li>@Html.ActionLink("TOUR", "ResetPassword", "Users")</li>
+                            <li>@Html.ActionLink("FAQ", "Settings", "Users")</li>
+                         @if (Request.IsAuthenticated)
+                         {
+                              <li>@Html.ActionLink("ACCOUNT", "", "")
+
+                                <ul>
+                                    <li>@Html.ActionLink("DASHBOARD", "Index", "Home")</li>
+                                    <li>@Html.ActionLink("ADD COMPANY", "ResetPassword", "Users")</li>
+                                    <li>@Html.ActionLink("INBOX", "Settings", "Users")</li>
+                                    <li>@Html.ActionLink("BILLING", "Settings", "Users")</li>
+                                    <li>@Html.ActionLink("SETTINGS", "Settings", "Users")</li>
+                                </ul>
+                            </li>
+                              
+                         }
+                        else
+                         {
+                           <li>@Html.ActionLink("CREATE ACCOUNT", "CreateAccount", "Users")</li>
+                         }
+                    </ul>
+
+               </div>
+                <div id="login">
+                @Html.Partial("_LoginPartial")
+                </div>
+            </div>
+        </div>
+        <div id="body" class="clear-fix">
+         @*   @RenderSection("featured", required: false)*@
+            <section class="content-wrapper main-content">
+                @RenderBody()
+            </section>
+        </div>
+        <footer>
+        <div class="content-wrapper">
+                <div class="">
+                    <p>&copy; @DateTime.Now.Year - ITindex.com.au</p>
+                </div>
+            </div>
+        </footer>
+
+        @section Scripts{@Scripts.Render("~/bundles/jquery")}
+        @Scripts.Render("~/bundles/jquery")
+        
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

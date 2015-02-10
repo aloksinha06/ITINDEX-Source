@@ -1,0 +1,23 @@
+﻿@model ITINDEXAU.Models.Search
+
+@{
+    ViewBag.Title = "";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="search-box">
+    <table>
+        <tr>
+            <td>@Html.LabelFor(m => m.Keyword, new {@class="search-label"}):</td>
+            <td>@Html.LabelFor(m => m.Location, new {@class="search-label"}):</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>@Html.TextBoxFor(m=>m.Keyword, new{@class="keyword-text",@PlaceHolder="  [Your Keywords]"})</td>
+            <td>@Html.TextBoxFor(m=>m.Location, new{@class="location-text",@PlaceHolder="  [Location]"})</td>
+            <td><input type="submit" value="Search" class="search-button" /></td>
+        </tr>
+    </table>
+</div>
+<div class="search-result">
+
+</div>

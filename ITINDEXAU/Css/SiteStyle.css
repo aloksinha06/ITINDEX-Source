@@ -1,0 +1,314 @@
+﻿body {
+    background-color: #d1cdcd;
+    /*border-top: solid 6px #000;*/
+    color: #333;
+    font-size: .85em;
+    font-family: "Segoe UI" , Verdana, Helvetica, Sans-Serif;
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    color: #232323;
+    padding-left:3px;
+    padding:5px;
+    font-size:1em;
+}
+    a:link, a:hover, a:visited, a:active {color:#000;
+    }
+.clear-fix {clear:both;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.75em;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+h4 {
+    font-size: 1.1em;
+}
+
+h5, h6 {
+    font-size: 1em;
+}
+.check-box {width:17px; height:17px;
+}
+/*main
+----------------------------------*/
+.content-wrapper { 
+    margin: 0px auto 0px auto;
+    width:1024px;
+    /*padding:0 15px 0 15px;*/
+}
+
+#body {
+    background-color:#fff;
+ }
+.main-content {
+    margin: 0px auto 0px auto;
+    width:1024px;
+    padding:20px 10px 20px 10px;
+    min-height:400px;
+}
+.fieldset {border:1px solid #d1cdcd;
+           border-radius:3px;
+}
+.validation-error {
+    background-color:#009900;
+    font-weight:bold;
+    color:white;
+    border-radius:3px;
+}
+.validation-error-msg {
+    font-weight:bold;
+    color:#009900;
+}
+.footer {
+    margin: 0px auto 0px auto;
+    width:1024px;
+    padding:20px 10px 20px 10px;
+    min-height:400px;
+}
+/*Site-title
+--------------------------------------------*/
+#login {
+    font-size:1.10em;
+    font-weight:600;
+    color:black;
+    float:left;
+    width:30%;
+    height:25px;
+    text-align:right;
+    padding:3px 0 0 0;        
+}
+    #login a {
+        
+    }
+        #login a:hover { text-decoration:underline; color:#009900;
+        }
+    #login a.username {
+        text-decoration:underline;
+        font-size:1em;
+    }
+
+    /* menu
+----------------------------------------------------------*/
+#menu {
+  float:left;
+  width: 70%;
+  height: 25px;
+  /*clear: both;*/
+}
+
+ul#nav {
+  float: left;
+  width: 70%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul#nav li {
+  display: inline;
+}
+
+ul#nav li a {
+  float: left;
+  font: bold 1.1em arial,verdana,tahoma,sans-serif;
+  line-height: 25px;
+  color: #000;
+  text-decoration: none;
+  /*text-shadow: 1px 1px 1px #880000;*/
+  margin: 0;
+  padding: 0 15px;   
+}
+
+/* APPLIES THE ACTIVE STATE */
+ul#nav .current a, ul#nav li:hover > a  {
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 1px 1px 1px #330000;
+  background: #009900;
+  height:25px; 
+}
+
+/* THE SUBMENU LIST HIDDEN BY DEFAULT */
+ul#nav  ul {
+  display: none;
+}
+
+/* WHEN THE FIRST LEVEL MENU ITEM IS HOVERED, THE CHILD MENU APPEARS */
+ul#nav li:hover > ul {
+  position: absolute;
+  display: block;
+  width: 974px;
+  height: 30px;
+  position: absolute;
+  margin: 25px 0 0 0;
+  background-color:#009900;
+}
+
+ul#nav li:hover > ul li a {
+  float: left;
+  font: bold 1.1em arial,verdana,tahoma,sans-serif;
+  line-height: 30px;
+  color: #fff;
+  text-decoration: none;
+  margin: 0;
+  padding: 0 30px 0 0;
+}
+
+ul#nav li:hover > ul li a:hover {
+  color: #000;
+  text-shadow: 1px 1px 1px #fff;
+  text-decoration: none;
+  /*text-shadow: none;*/
+}
+/*Create form
+    ---------------------------------------*/
+.text-field {
+    width:220px;
+    height:25px;
+    border-radius:3px;
+    border:1px solid #808080;
+}
+.button-input-submit {
+    width: 100px;
+    height: 35px;
+    font:bold;
+    color:white;
+}
+/*LogIn Page
+    ------------------------------------------*/
+
+.login-content {
+    width:89%;
+    padding:50px 50px 50px 50px;
+    border:1px solid #d1cdcd;
+    border-radius:3px;
+    min-height:300px;
+}
+.button-login {
+    width:110px;
+    height:30px;
+}
+
+/*Index Page
+    ------------------------------------------*/
+
+.search-box {
+    width:95%;
+    padding:8px 20px 10px 20px;
+    height:60px;
+    border:1px solid #d1cdcd;
+    margin:0px;
+}
+.search-label {
+    font-size:1.2em;
+    font-weight:500;
+}
+.keyword-text {
+    width:500px;
+    height:25px;
+    border-radius:3px;
+    border:1px solid #808080;
+}
+.location-text {
+    width:350px;
+    height:25px;
+    border-radius:3px;
+    border:1px solid #808080;
+}
+.search-button {
+    width:100px;
+    height:29px;
+    border:1px solid #000;
+    border-radius:3px;
+    background-color:#009900;
+    color:white;
+    font-size:1.2em;
+    font-weight:500;
+}
+/*Search Result
+    --------------------------------------------------*/
+.search-result {
+    width:95%;
+    padding:10px 20px 10px 20px;
+    margin:10px 0 0px 0 ;
+    border:1px solid #d1cdcd;
+    min-height:600px;
+    border-radius:3px;
+}
+/*CreateAccount
+    ----------------------------------------------------*/
+
+.create-content {
+    width:89%;
+    padding:50px 50px 50px 50px;
+    border:1px solid #d1cdcd;
+    border-radius:3px;
+    min-height:400px;
+}
+.terms { font-size:1.1em;
+         font-weight:400;
+         text-decoration:underline;
+         color:#009900;
+}
+    .terms:hover {font-weight:400;
+                  text-decoration:none;
+                  color:#f00;
+    }
+
+ /*Forgot Pssword
+     ------------------------------------------------------*/
+
+.forgot-content {
+    width:89%;
+    padding:50px 50px 50px 50px;
+    border:1px solid #d1cdcd;
+    border-radius:3px;
+    min-height:300px;
+}
+
+.forgot-link {
+    font-size:1.1em;
+    font-weight:400;
+    text-decoration:underline;
+    color:#009900;
+}
+.forgot-link:hover {
+    font-weight:400;
+    text-decoration:none;
+    color:#f00;
+}
+
+/*Settings
+    ---------------------------------------------------------*/
+
+.setting-content {
+    width:89%;
+    padding:50px 50px 50px 50px;
+    border:1px solid #d1cdcd;
+    border-radius:3px;
+    min-height:400px;
+}
+
+/*ResetPassword
+    ---------------------------------------------------------*/
+
+.reset-content {
+    width:89%;
+    padding:50px 50px 50px 50px;
+    border:1px solid #d1cdcd;
+    border-radius:3px;
+    min-height:300px;
+}
+
+

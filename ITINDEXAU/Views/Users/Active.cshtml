@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Active";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Active</h2>
+  @if(ViewBag.Result =="Activated")
+{
+<h3>Congratulation !!! Now Your Account is Active </h3>
+<h4><a href="/User/Login">Click Here To Login</a></h4>
+} 
+@if(ViewBag.Result=="AlreadyActivated")
+{
+    <h3>Your Account already has been activated </h3>
+<h4><a href="/User/Login">Click Here To Login</a></h4>
+}
+@if(ViewBag.Result=="Failed")
+{
+    <h3>Your Account is Not Active !!! </h3>
+}
+@section Scripts {@Scripts.Render("~/bundles/jqueryval")}

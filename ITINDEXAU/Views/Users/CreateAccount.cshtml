@@ -1,0 +1,124 @@
+﻿@model ITINDEXAU.Models.Register
+@{
+    ViewBag.Title = "CreateAccount";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="create-content">
+    @using (Html.BeginForm()){
+                    <div class="validation-error">
+             @Html.ValidationSummary()
+            @if (ViewBag.regmsg == "Already")
+            {
+            <h5>An account has already been registered with this email but the email has not been verified. Please <a href="/Users/ForgotPassword">click  here</a> to resend the verification code to [@Html.ValueFor(u => u.EmailId) the user registered with].</h5>
+            }
+             @if (ViewBag.regmsg == "Success")
+            {
+            <h5>Send email successfully </h5>
+            }
+             @if(ViewBag.regmsg=="Try")
+            {
+            <h5>Sorry Try Again</h5>
+            }
+              @if (ViewBag.regmsg == "AlreadyExit")
+            {
+            <h5>The email [@Html.ValueFor(u => u.EmailId) the user registered with] has already been used to sign up with IT Index. Please  <a href="/Users/LogIn"> login </a>to access your account or <a href="/Users/ForgotPassword"> click here</a> to reset your password</h5>
+             }
+                </div>
+    <table>
+        <tr>
+            <td colspan="4">
+                <h2>Create Account</h2>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+    
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(m => m.FirstName)</td>
+            <td>:</td>
+            <td>@Html.TextBoxFor(m => m.FirstName, new {@class="text-field" ,@placeholder="  [First Name]"})</td>
+            <td class="validation-error-msg">@Html.ValidationMessageFor(m=>m.FirstName)</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(m => m.LastName)</td>
+            <td>:</td>
+            <td>@Html.TextBoxFor(m => m.LastName, new {@class="text-field" ,@placeholder="  [Last Name]"})</td>
+            <td class="validation-error-msg">@Html.ValidationMessageFor(m=>m.LastName)</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(m => m.EmailId)</td>
+            <td>:</td>
+            <td>@Html.TextBoxFor(m => m.EmailId, new {@class="text-field" ,@placeholder="  [Email Id]"})</td>
+            <td class="validation-error-msg">@Html.ValidationMessageFor(m=>m.EmailId)</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(m => m.Password)</td>
+            <td>:</td>
+            <td>@Html.PasswordFor(m => m.Password, new {@class="text-field", @placeholder="  [Password]" })</td>
+            <td class="validation-error-msg">@Html.ValidationMessageFor(m=>m.Password)</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(m => m.ConfirmPassword)</td>
+            <td>:</td>
+            <td>@Html.PasswordFor(m => m.ConfirmPassword, new {@class="text-field", @placeholder="  [Confirm Password]" })</td>
+            <td class="validation-error-msg">@Html.ValidationMessageFor(m=>m.ConfirmPassword)</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="2">@Html.LabelFor(m => m.terms)</td>
+            <td>@Html.ActionLink("Terms & Condition", "", "", new {@class="terms" }) @Html.CheckBoxFor(m => m.terms, new {@class="check-box" })</td>
+            <td>@Html.ValidationMessageFor(m=>m.terms)</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td style="text-align:right;"><input type="submit" value="Sign Up" class="button-login" /></td>
+            <td></td>
+        </tr>
+    </table>
+    }
+</div>

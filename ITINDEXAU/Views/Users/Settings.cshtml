@@ -1,0 +1,64 @@
+﻿@model ITINDEXAU.Models.Setting
+@{
+    ViewBag.Title = "Settings";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="setting-content">
+    @using (Html.BeginForm()){
+        @Html.HiddenFor(m=>m.ID);
+    <table>
+        <tr><td colspan="4"><h2>Change Setting</h2></td></tr>
+        <tr><td colspan="4"><div class="validation-error">@Html.ValidationSummary()</div></td></tr>
+        <tr><td colspan="4"></td></tr>
+        <tr><td>@Html.LabelFor(m=>m.FirstName)</td>
+            <td>:</td>
+            <td>@Html.TextBoxFor(m => m.FirstName, new {@class="text-field" , placeholder="  [First Name]"})</td>
+            <td class="validation-error-msg">@Html.ValidationMessageFor(m=>m.FirstName)</td>
+        </tr>
+        <tr><td colspan="4"></td></tr>
+        <tr><td>@Html.LabelFor(m=>m.LastName)</td>
+            <td>:</td>
+            <td>@Html.TextBoxFor(m => m.LastName, new {@class="text-field" , placeholder="  [Last Name]"})</td>
+            <td class="validation-error-msg">@Html.ValidationMessageFor(m=>m.LastName)</td>
+        </tr>
+        <tr><td colspan="4"></td></tr>
+        <tr><td>@Html.LabelFor(m=>m.OfficePhone)</td>
+            <td>:</td>
+            <td>@Html.TextBoxFor(m => m.OfficePhone, new {@class="text-field" , placeholder="  [Office Phone]"})</td>
+            <td class="validation-error-msg">@Html.ValidationMessageFor(m=>m.OfficePhone)</td>
+        </tr>
+        <tr><td colspan="4"></td></tr>
+        <tr><td>@Html.LabelFor(m=>m.MobilePhone)</td>
+            <td>:</td>
+            <td>@Html.TextBoxFor(m => m.MobilePhone, new {@class="text-field" , placeholder="  [Mobile Phone]"})</td>
+            <td class="validation-error-msg">@Html.ValidationMessageFor(m=>m.MobilePhone)</td>
+        </tr>
+        <tr><td colspan="4"></td></tr>
+        <tr><td>@Html.LabelFor(m=>m.CurrentPassword)</td>
+            <td>:</td>
+            <td>@Html.PasswordFor(m => m.CurrentPassword, new {@class="text-field" , placeholder="  [Current Password]"})</td>
+            <td class="validation-error-msg">@Html.ValidationMessageFor(m=>m.CurrentPassword)</td>
+        </tr>
+        <tr><td colspan="4"></td></tr>
+        <tr><td>@Html.LabelFor(m=>m.NewPassword)</td>
+            <td>:</td>
+            <td>@Html.PasswordFor(m => m.NewPassword, new {@class="text-field" , placeholder="  [New Password]"})</td>
+            <td class="validation-error-msg">@Html.ValidationMessageFor(m=>m.NewPassword)</td>
+        </tr>
+        <tr><td colspan="4"></td></tr>
+        <tr><td>@Html.LabelFor(m=>m.ConfirmPassword)</td>
+            <td>:</td>
+            <td>@Html.PasswordFor(m => m.ConfirmPassword, new {@class="text-field" , placeholder="  [Confirm Password]"})</td>
+            <td class="validation-error-msg">@Html.ValidationMessageFor(m=>m.ConfirmPassword)</td>
+        </tr>
+        <tr><td colspan="4"></td></tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td style="text-align:right;"><input type="submit" value="Save Changes" class="button-login" /></td>
+            <td></td>
+        </tr>
+    </table>
+    }
+</div>
+@section Scripts {@Scripts.Render("~/bundles/jqueryval")}

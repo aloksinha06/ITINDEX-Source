@@ -1,0 +1,76 @@
+﻿@model ITINDEXAU.Models.Login
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    HtmlHelper.ClientValidationEnabled = true;
+}
+
+<div class="login-content">
+     @using (Html.BeginForm()) {     
+    <table>
+        <tr>
+            <td colspan="4">
+                <h2>LogIn</h2>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                        <div class="validation-error">
+                             @Html.ValidationSummary()
+                        </div>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(m => m.EmailId)</td>
+            <td>:</td>
+            <td>@Html.TextBoxFor(m => m.EmailId, new {@class="text-field" ,@placeholder="  [Email Id]"})</td>
+            <td class="validation-error-msg">@Html.ValidationMessageFor(m => m.EmailId)</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(m => m.Password)</td>
+            <td>:</td>
+            <td>@Html.PasswordFor(m => m.Password, new {@class="text-field", @placeholder="  [Password]" })</td>
+            <td class="validation-error-msg">@Html.ValidationMessageFor(m=>m.Password)</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(m => m.RememberMe)</td>
+            <td></td>
+            <td style="text-align:right;">@Html.CheckBoxFor(m => m.RememberMe, new {@class="check-box" })</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>@Html.ActionLink("Forgot Password", "ForgotPassword", "Users", new {@class="forgot-link" })</td>
+            <td></td>
+            <td style="text-align:right;"><input type="submit" value="Log In" class="button-login" /></td>
+            <td></td>
+        </tr>
+
+    </table>
+     }
+     
+
+</div>
